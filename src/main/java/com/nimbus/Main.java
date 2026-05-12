@@ -45,7 +45,9 @@ public class Main {
 
         // Loop to display music
         for (Song s: nimbusPlaylist) {
+            s.play();
             displaySong(s);
+
         }
 
         System.out.println("Total Songs in Library: " + nimbusPlaylist.size());

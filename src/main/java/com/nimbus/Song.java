@@ -1,6 +1,6 @@
 package com.nimbus;
 
-public class Song {
+public class Song implements Playable{
     protected String title;
     protected String artist;
     protected int duration;
@@ -17,5 +17,10 @@ public class Song {
         int m = duration / 60;
         int s = duration % 60;
         return String.format("%d:%02d", m, s);
+    }
+
+    @Override
+    public void play() {
+        System.out.println("Playing generic song...");
     }
 }

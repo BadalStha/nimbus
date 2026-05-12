@@ -1,6 +1,6 @@
 package com.nimbus;
 
-public class CloudSong extends Song{
+public class CloudSong extends Song implements Playable{
     private String streamUrl;
 
     public CloudSong(String title, String artist, int duration, int bitrate, String streamUrl) {
@@ -10,5 +10,10 @@ public class CloudSong extends Song{
 
     public String getStreamUrl() {
         return streamUrl;
+    }
+
+    @Override
+    public void play() {
+        System.out.println("Connecting to " + streamUrl + " and buffering stream...");
     }
 }
