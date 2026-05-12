@@ -24,6 +24,7 @@ public class Main {
 
         // Initializing the dynamic list
         ArrayList<Song> nimbusPlaylist = new ArrayList<>();
+        ArrayList<Song> emptyPlayList = new ArrayList<>();
 
         // Adding songs dynamically
         nimbusPlaylist.add(new Song("Perfect", "Ed Sheeran", 234, 320));
@@ -39,15 +40,24 @@ public class Main {
         CloudSong song3 = new CloudSong("Tum Tak", "Javed Ali", 505, 320, "examplelinktomucic.com");
 
         nimbusPlaylist.add(0, song1);
-
         nimbusPlaylist.add(song2);
         nimbusPlaylist.add(song3);
 
+        try {
+            emptyPlayList.get(0);
+        } catch (Exception e) {
+            System.out.println("Your library is currently empty. Add some music!");
+        }
+
         // Loop to display music
         for (Song s: nimbusPlaylist) {
-            s.play();
-            displaySong(s);
 
+            try {
+                s.play();
+                displaySong(s);
+            } catch (Exception e) {
+                System.out.println("Could not play " + s.title + ": " + e.getMessage());
+            }
         }
 
         System.out.println("Total Songs in Library: " + nimbusPlaylist.size());

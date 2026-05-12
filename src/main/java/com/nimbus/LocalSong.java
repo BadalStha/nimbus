@@ -14,6 +14,9 @@ public class LocalSong extends Song implements Playable{
 
     @Override
     public void play() {
+        if (filePath == null || filePath.isEmpty()) {
+            throw new RuntimeException("File path is missing!");
+        }
         System.out.println("Reading file from: " + filePath + " and starting playback.");
     }
 }

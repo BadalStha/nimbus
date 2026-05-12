@@ -14,6 +14,9 @@ public class CloudSong extends Song implements Playable{
 
     @Override
     public void play() {
+        if (streamUrl == null || streamUrl.isEmpty()) {
+            throw new RuntimeException("Link is missing" + streamUrl);
+        }
         System.out.println("Connecting to " + streamUrl + " and buffering stream...");
     }
 }
