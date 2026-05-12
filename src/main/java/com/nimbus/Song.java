@@ -1,10 +1,10 @@
 package com.nimbus;
 
 public class Song {
-    String title;
-    String artist;
-    int duration;
-    int bitrate;
+    protected String title;
+    protected String artist;
+    protected int duration;
+    protected int bitrate;
 
     public Song(String title, String artist, int duration, int bitrate) {
         this.title = title;

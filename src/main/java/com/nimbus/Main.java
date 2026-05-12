@@ -35,7 +35,13 @@ public class Main {
 
         Song song1 = new Song ("Highway to Hell", "AC/DC", 328, 320);
 
+        LocalSong song2 = new LocalSong("Timi Bhane", "Albatross", 503, 320,"/home/badal/Music/");
+        CloudSong song3 = new CloudSong("Tum Tak", "Javed Ali", 505, 320, "examplelinktomucic.com");
+
         nimbusPlaylist.add(0, song1);
+
+        nimbusPlaylist.add(song2);
+        nimbusPlaylist.add(song3);
 
         // Loop to display music
         for (Song s: nimbusPlaylist) {
