@@ -8,6 +8,8 @@ public class CloudSong extends Song implements Playable{
         this.streamUrl = streamUrl;
     }
 
+    public CloudSong() {}
+
     public String getStreamUrl() {
         return streamUrl;
     }

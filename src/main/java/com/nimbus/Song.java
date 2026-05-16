@@ -13,6 +13,8 @@ public class Song implements Playable{
         this.bitrate = bitrate;
     }
 
+    public Song() {}
+
     public String getFormattedTime() {
         int m = duration / 60;
         int s = duration % 60;

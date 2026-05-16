@@ -1,6 +1,9 @@
 package com.nimbus;
 
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.ArrayList;
@@ -34,9 +37,22 @@ public class MusicController {
         return new Song("Badal Sari", "Swar", 610, 320);
     }
 
-    // Library
+     //Library
     @GetMapping("/library")
     public List<Song> getLibrary() {
         return library;
+    }
+
+    @GetMapping("/library/{index}")
+    public ResponseEntity<?> getSongByIndex(@PathVariable("index") int index) {
+
+        try {
+            Song foundSong = library.get(index);
+            return ResponseEntity.ok(foundSong);
+        } catch (IndexOutOfBoundsException e) {
+            return ResponseEntity
+                    .status(HttpStatus.NOT_FOUND)
+                    .body("Error: Song index " + index + " does not exit in the library.");
+        }
     }
 }

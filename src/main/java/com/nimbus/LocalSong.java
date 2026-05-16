@@ -8,6 +8,8 @@ public class LocalSong extends Song implements Playable{
         this.filePath = filePath;
     }
 
+    public LocalSong() {}
+
     public String getFilePath() {
         return filePath;
     }
